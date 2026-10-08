@@ -2,8 +2,22 @@
 
 import Image from "next/image";
 import HeroImage from "@/assets/images/img-hero.png"
+import { useFormik } from "formik";
+import { SginUpSchema } from "@/lib/validators";
 
 export default function Hero() {
+
+  const {handleSubmit, handleChange, values, resetForm, errors} = useFormik({
+    initialValues: {
+      phone: '',
+    },
+    validationSchema: SginUpSchema,
+    onSubmit: values => {
+      console.log(values)
+      resetForm()
+    },
+  });
+
   return (
     <section id="hero" className="bg-[#F6EBDA]">
       {/* Hero container */}
@@ -25,7 +39,7 @@ export default function Hero() {
             کار کردن پیدا کنی
           </p>
 
-          <form className="mt-12 items-center lg:mt-24">
+          <form onSubmit={handleSubmit} className="mt-12 items-center lg:mt-24">
             <p className="mb-4 mr-4 font-bold lg:text-right">
               اولین نفر از آماده شدن گوشه دنج مطلع شو!
             </p>
@@ -34,18 +48,24 @@ export default function Hero() {
               <input
                 type="tel"
                 id="phone"
+                name="phone"
+                onChange={handleChange}
+                value={values.phone}
                 className="h-12 w-48 rounded-br-3xl rounded-tr-3xl border border-gray-300 pr-6 shadow-lg placeholder:pr-6 focus:border-[#c67c4e] focus:ring-1 focus:ring-[#c67c4e] focus:outline-none lg:w-72"
                 placeholder="09xxxxx6789"
               />
 
               <button
                 id="btn-send"
-                className="absolute rounded-bl-3xl rounded-tl-3xl bg-[#A84D37] px-8 py-3 text-white shadow-lg"
-                type="button"
+                className="absolute rounded-bl-3xl rounded-tl-3xl bg-[#A84D37] px-8 py-3 text-white shadow-lg hover:cursor-pointer"
+                type="submit"
               >
                 خبرم کن!
               </button>
             </div>
+            {errors && 
+            <p className="text-red-500 text-xs mr-4 mt-2">{errors.phone}</p>
+            }
           </form>
         </div>
 

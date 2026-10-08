@@ -3,6 +3,8 @@ import ContactImage from "@/assets/images/Contact us.png"
 import { FaInstagram } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import ContactForm from "@/components/forms/Contact.form";
+
 export default function Contact() {
   return (
     <section id="Contact-us" className="mx-auto max-w-[1440px]">
@@ -112,74 +114,7 @@ export default function Contact() {
 
         {/* Contact us Form */}
         <div className="mx-auto flex flex-col md:w-1/2 md:px-6">
-          <form className="relative">
-            <div className="grid md:grid-cols-2 md:gap-6">
-              {/* Full Name */}
-              <div className="group relative z-0 mb-6 w-80 md:w-full">
-                <label
-                  htmlFor="first-name"
-                  className="mb-2 block text-sm font-medium text-gray-900"
-                >
-                  نام و نام‌خانوادگی
-                </label>
-
-                <input
-                  type="text"
-                  name="first_name"
-                  id="first-name"
-                  className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 text-sm text-gray-900 focus:border-[#C67C4E] focus:ring-0 focus:outline-none"
-                  placeholder="نام و نام خانوادگی خود را وارد کنید ..."
-                  required
-                />
-              </div>
-
-              {/* Email */}
-              <div className="group relative z-0 mb-6 w-80 md:w-full">
-                <label
-                  htmlFor="email"
-                  className="mb-2 block text-sm font-medium text-gray-900"
-                >
-                  ایمیل
-                </label>
-
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 text-sm text-gray-900 focus:border-[#C67C4E] focus:ring-0 focus:outline-none"
-                  placeholder="example@domain.com"
-                  required
-                />
-              </div>
-            </div>
-
-            {/* Message */}
-            <div className="group relative z-0 mb-6 w-80 md:w-full">
-              <label
-                htmlFor="message"
-                className="mb-2 block text-sm font-medium text-gray-900"
-              >
-                پیام شما
-              </label>
-
-              <input
-                type="text"
-                name="message"
-                id="message"
-                className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 text-sm text-gray-900 focus:border-[#C67C4E] focus:ring-0 focus:outline-none"
-                placeholder="متن پیام شما..."
-                required
-              />
-            </div>
-
-            {/* Submit */}
-            <button
-              type="submit"
-              className="absolute mt-10 mb-2 rounded-lg bg-[#C67C4E] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#C67C4E] focus:ring-4 focus:ring-[#C67C4E] focus:outline-none md:left-0 md:mt-52"
-            >
-              ارسال پیام
-            </button>
-          </form>
+         <ContactForm />
         </div>
       </div>
     </section>

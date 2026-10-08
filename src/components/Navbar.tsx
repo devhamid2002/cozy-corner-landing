@@ -38,7 +38,7 @@ export default function Navbar() {
 
         {/* Register Cafe Button */}
         <div className="hidden lg:flex mt-3 w-40">
-        <Link href="/">
+        {/* <Link href="/">
             <button
             id="btn-send"
             className="hidden lg:flex bg-[#A84D37] py-3 px-8 shadow-lg text-white rounded-full"
@@ -46,7 +46,7 @@ export default function Navbar() {
             >
             ثبت کافه
             </button>
-        </Link>
+        </Link> */}
         </div>
 
         {/* Hamburger Menu */}
@@ -92,12 +92,12 @@ export default function Navbar() {
 
             <hr className="w-full h-px my-8 bg-gray-200 border-1" />
 
-            <Link
+            {/* <Link
             href="form one.html"
             className="w-full py-3 text-center rounded-full bg-[#c67c4e]"
             >
             ثبت کافه
-            </Link>
+            </Link> */}
 
         </div>
         </div>
